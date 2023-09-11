@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1247291480}
   unterschied: {x: 0, y: 0, z: 0}
-  test: 30
+  test: 25
 --- !u!1 &554429832
 GameObject:
   m_ObjectHideFlags: 0
