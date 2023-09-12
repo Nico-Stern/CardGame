@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,22 +7,20 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float Speed;
     public new Vector3 Move;
+    public Rigidbody2D rb;
 
-    [SerializeField] float hor;
-    [SerializeField] float ver;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
         Move.x = Input.GetAxis("Horizontal");
         Move.y = Input.GetAxis("Vertical");
 
-        hor = Move.x;
-        ver = Move.y;
-
         Move.Normalize();
-
-        Move *= Speed * Time.deltaTime;
-
-        transform.position += Move;
+        
+        rb.velocity = Move * Speed;
     }
 }
