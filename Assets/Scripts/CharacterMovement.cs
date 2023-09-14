@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float Speed;
+    [SerializeField] float Sprint;
     public new Vector3 Move;
     public Rigidbody2D rb;
 
@@ -20,7 +21,14 @@ public class CharacterMovement : MonoBehaviour
         Move.y = Input.GetAxis("Vertical");
 
         Move.Normalize();
-        
-        rb.velocity = Move * Speed;
+
+        if (Input.GetKey("left shift"))
+        {
+            rb.velocity = Move * Sprint;
+        }
+        else
+        {
+            rb.velocity = Move * Speed;
+        }
     }
 }
