@@ -5,8 +5,8 @@ using UnityEngine;
 public class Kiste : ColorLibary
 {
 
-    public CharacterColor CC;
-    public Collider2D C2;
+    private CharacterColor CC;
+    private Collider2D C2;
 
     public override void Start()
     {
