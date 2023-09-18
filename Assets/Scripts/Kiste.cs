@@ -6,24 +6,25 @@ public class Kiste : ColorLibary
 {
 
     private CharacterColor CC;
-    private Collider2D C2;
+    private Rigidbody2D rb;
 
     public override void Start()
     {
         base.Start();
         CC = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();
-        C2 = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         if (CC.farbZahl == farbZahl)
         {
-            C2.enabled = true;
+            rb.isKinematic = false;
         }
         else
         {
-            C2.enabled = false;
+            rb.isKinematic = true;
+            rb.velocity = new Vector2(0, 0);
         }
     }
 }
