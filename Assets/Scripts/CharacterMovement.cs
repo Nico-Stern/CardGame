@@ -6,8 +6,8 @@ public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] float Speed;
     [SerializeField] float Sprint;
-    public new Vector3 Move;
-    public Rigidbody2D rb;
+    private new Vector3 Move;
+    private Rigidbody2D rb;
 
     private void Start()
     {
