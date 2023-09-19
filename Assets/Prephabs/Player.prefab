@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 6
   Sprint: 8
+  timeMovementBlocked: 0
   canMove: 0
 --- !u!212 &2270609407485649447
 SpriteRenderer:

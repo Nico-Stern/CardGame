@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer SP;
 
+    [SerializeField] float timeMovementBlocked;
+
     public bool canMove;
 
     private void Start()
@@ -54,7 +56,7 @@ public class CharacterMovement : MonoBehaviour
 
     IEnumerator CanRun()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(timeMovementBlocked);
         canMove = true;
     }
 }

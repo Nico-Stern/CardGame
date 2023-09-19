@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,12 @@ public class SchaltTuer : MonoBehaviour
     SpriteRenderer SP;
     Camera Cam;
 
-    bool isPowerdOnce = false;
+    [SerializeField]bool isPowerdOnce = false;
 
-    public bool isPowerd;
+    [NonSerialized]public bool isPowerd;
+
+    [SerializeField]float TimerofPower=7;
+    [SerializeField]float Timer;
 
     private void Start()
     {
@@ -26,9 +30,10 @@ public class SchaltTuer : MonoBehaviour
         if (!isPowerdOnce)
         {
             Cam.CamPositions.Add(this.gameObject);
-            isPowerdOnce=true;
         }
+        isPowerdOnce=true;
         isPowerd = true;
+        Timer = TimerofPower;
     }
 
     void DoorAusAn()
@@ -52,6 +57,18 @@ public class SchaltTuer : MonoBehaviour
         {
             StartCoroutine(NewCamera());
         }
+        if (isPowerdOnce)
+        {
+            
+            Timer -= Time.deltaTime;
+            
+            if (Timer <0)
+            {
+                isPowerdOnce = false;
+                Timer = 0;
+            }
+        }
+
     }
 
     IEnumerator NewCamera()
