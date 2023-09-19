@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2472178037174722294}
   - component: {fileID: 2472178037174722295}
   m_Layer: 0
-  m_Name: Wand
+  m_Name: FarbWand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
