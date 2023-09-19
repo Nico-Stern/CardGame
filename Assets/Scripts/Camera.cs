@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    public GameObject Player;
+    public CharacterMovement Player;
 
     [SerializeField] Vector3 unterschied;
 
@@ -21,6 +21,7 @@ public class Camera : MonoBehaviour
         }
         else
         {
+            Player.canMove = false;
             unterschied= CamPositions[0].transform.position - transform.position;
             if((transform.position.x+sense >= CamPositions[0].transform.position.x&& transform.position.x - sense <= CamPositions[0].transform.position.x) && (transform.position.y +sense >= CamPositions[0].transform.position.y && transform.position.y - sense <= CamPositions[0].transform.position.y))
             {

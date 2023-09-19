@@ -38,7 +38,7 @@ public class Generator : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name=="Player")
+        if (collision.gameObject.name=="Player"&!isFinished)
         {
             GenSlider.SetActive(true);
             isTouching = true;
@@ -55,6 +55,7 @@ public class Generator : MonoBehaviour
 
     void GeneratorFinished()
     {
+        GenSlider.SetActive(false);
         for(int i = 0; i < Door.Length; i++)
         {
             Door[i].ChangeDoor();

@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f33a3cbf53d874cbbe345b14b6342e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 1250185343}
+  Player: {fileID: 1250185347}
   unterschied: {x: 0, y: 0, z: 0}
   Speed: 40
   sense: 0.2
@@ -1772,11 +1772,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
---- !u!1 &1250185343 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2270609407485649446, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
+--- !u!114 &1250185347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2270609407485649442, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
   m_PrefabInstance: {fileID: 1250185342}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c8ed5c1b1189e543b8a80e01fbc2d94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1263796272 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1736943379482909808, guid: 0d7ce61aeb025b64283f345fe5432565, type: 3}
