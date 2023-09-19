@@ -1724,7 +1724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2270609407485649442, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: timeMovementBlocked
-      value: 0.75
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2270609407485649444, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: m_RootOrder
