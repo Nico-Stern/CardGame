@@ -15,6 +15,11 @@ public class Generator : MonoBehaviour
     public SchaltTuer[] Door;
     public GameObject GenSlider;
 
+    private void Start()
+    {
+        GenSlider.SetActive(false);
+    }
+
     void Update()
     {
         if (stand >= ziel&!isFinished)
