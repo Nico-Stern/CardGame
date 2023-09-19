@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,16 +10,17 @@ public class ColorLibary : MonoBehaviour
 
     protected Color Lila = new Color(1, 0, 1, 1);
     protected Color Orange = new Color(1, 0.3f, 0, 1);
+    [SerializeField] private SpriteRenderer SR;
 
     enum Farben
     {
-        Weiﬂ,
+        Wei√ü,
         Rot,
         Blau,
         Lila,
         Gelb,
         Orange,
-        Gr¸n,
+        Gr√ºn,
         Schwarz
     }
 
@@ -29,29 +31,62 @@ public class ColorLibary : MonoBehaviour
         switch (farbZahl)
         {
             case 0:
-             GetComponent<SpriteRenderer>().color = Color.white;
+             SR.color = Color.white;
                 break;
             case 1:
-                GetComponent<SpriteRenderer>().color = Color.red;
+                SR.color = Color.red;
                 break;
             case 2:
-                GetComponent<SpriteRenderer>().color = Color.blue;
+                SR.color  = Color.blue;
                 break;
             case 3:
-                GetComponent<SpriteRenderer>().color =Lila ;
+                SR.color  =Lila ;
                 break;
             case 4:
-                GetComponent<SpriteRenderer>().color = Color.yellow;
+                SR.color  = Color.yellow;
                 break;
             case 5:
-                GetComponent<SpriteRenderer>().color = Orange;
+                SR.color  = Orange;
                 break;
             case 6:
-                GetComponent<SpriteRenderer>().color = Color.green;
+                SR.color  = Color.green;
                 break;
             case 7:
-                GetComponent<SpriteRenderer>().color = Color.black;
+                SR.color  = Color.black;
                 break;
         }
+    }
+
+    private void OnValidate()
+    {
+        farbZahl= ((int)farbe);
+
+        switch (farbZahl)
+        {
+            case 0:
+                SR.color = Color.white;
+                break;
+            case 1:
+                SR.color = Color.red;
+                break;
+            case 2:
+                SR.color  = Color.blue;
+                break;
+            case 3:
+                SR.color  =Lila ;
+                break;
+            case 4:
+                SR.color  = Color.yellow;
+                break;
+            case 5:
+                SR.color  = Orange;
+                break;
+            case 6:
+                SR.color  = Color.green;
+                break;
+            case 7:
+                SR.color  = Color.black;
+                break;
+         }
     }
 }

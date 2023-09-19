@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farbe: 0
   farbZahl: 0
+  SR: {fileID: 2472178037174722294}
   C2: {fileID: 2472178037174722295}
 --- !u!212 &2472178037174722294
 SpriteRenderer:

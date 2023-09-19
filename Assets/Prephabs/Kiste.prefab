@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farbe: 0
   farbZahl: 0
+  SR: {fileID: 5440194033941584529}
 --- !u!61 &5440194033941584528
 BoxCollider2D:
   m_ObjectHideFlags: 0

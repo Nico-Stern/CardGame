@@ -7,6 +7,7 @@ public class Kiste : ColorLibary
 
     private CharacterColor CC;
     private Rigidbody2D rb;
+    
 
     public override void Start()
     {
