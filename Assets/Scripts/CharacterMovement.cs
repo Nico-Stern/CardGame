@@ -46,6 +46,10 @@ public class CharacterMovement : MonoBehaviour
         {
             rb.velocity = Move * Speed;
         }
+        else
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 
     IEnumerator CanRun()

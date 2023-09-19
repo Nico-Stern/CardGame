@@ -10,6 +10,8 @@ public class SchaltTuer : MonoBehaviour
     SpriteRenderer SP;
     Camera Cam;
 
+    bool isPowerdOnce = false;
+
     public bool isPowerd;
 
     private void Start()
@@ -21,7 +23,11 @@ public class SchaltTuer : MonoBehaviour
 
     public void ChangeDoor()
     {
-        Cam.CamPositions.Add(this.gameObject);
+        if (!isPowerdOnce)
+        {
+            Cam.CamPositions.Add(this.gameObject);
+            isPowerdOnce=true;
+        }
         isPowerd = true;
     }
 
