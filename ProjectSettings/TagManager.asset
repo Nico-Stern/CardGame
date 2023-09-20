@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - ListSammler
+  - Bar
   layers:
   - Default
   - TransparentFX

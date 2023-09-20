@@ -17,6 +17,7 @@ public class Generator : MonoBehaviour
 
     private void Start()
     {
+        GenSlider=GameObject.FindGameObjectWithTag("Bar");
         GenSlider.SetActive(false);
     }
 

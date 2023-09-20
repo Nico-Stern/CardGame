@@ -22,15 +22,18 @@ public class Camera : MonoBehaviour
         else
         {
             Player.canMove = false;
-            unterschied= CamPositions[0].transform.position - transform.position;
-            if((transform.position.x+sense >= CamPositions[0].transform.position.x&& transform.position.x - sense <= CamPositions[0].transform.position.x) && (transform.position.y +sense >= CamPositions[0].transform.position.y && transform.position.y - sense <= CamPositions[0].transform.position.y))
+            unterschied = CamPositions[0].transform.position - transform.position;
+            if ((transform.position.x + sense >= CamPositions[0].transform.position.x &&
+                 transform.position.x - sense <= CamPositions[0].transform.position.x) &&
+                (transform.position.y + sense >= CamPositions[0].transform.position.y &&
+                 transform.position.y - sense <= CamPositions[0].transform.position.y))
             {
                 CamPositions.RemoveAt(0);
             }
         }
-        
 
-        
+
+
         unterschied.Normalize();
         unterschied.z = 0;
         transform.position += unterschied*Time.deltaTime*Speed;
