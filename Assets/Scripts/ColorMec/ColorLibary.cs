@@ -8,7 +8,7 @@ public class ColorLibary : MonoBehaviour
     [SerializeField] Farben farbe;
     public int farbZahl;
 
-    protected Color Lila = new Color(1, 0, 1, 1);
+    protected Color Lila = new Color(0.5f, 0, 1, 1);
     protected Color Orange = new Color(1, 0.3f, 0, 1);
     [SerializeField] private SpriteRenderer SR;
 

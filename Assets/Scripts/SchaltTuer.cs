@@ -27,7 +27,7 @@ public class SchaltTuer : MonoBehaviour
 
     public void ChangeDoor()
     {
-        if (!isPowerdOnce)
+        if (!isPowerdOnce&&C2.enabled)
         {
             Cam.CamPositions.Add(this.gameObject);
         }
