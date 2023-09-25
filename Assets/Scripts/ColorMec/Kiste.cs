@@ -18,6 +18,15 @@ public class Kiste : ColorLibary
 
     private void Update()
     {
+        if ((rb.velocity.x < rb.velocity.y&& rb.velocity.y >0)||(rb.velocity.x > rb.velocity.y&& rb.velocity.y <0))
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+        else if((rb.velocity.x > rb.velocity.y&& rb.velocity.x>0)||(rb.velocity.x > rb.velocity.y&& rb.velocity.x<0))
+        {
+            rb.velocity = new Vector2( rb.velocity.x,0);
+        }
+        
         if (CC.farbZahl == farbZahl)
         {
             rb.isKinematic = false;
@@ -25,7 +34,6 @@ public class Kiste : ColorLibary
         else
         {
             rb.isKinematic = true;
-            rb.velocity = new Vector2(0, 0);
         }
     }
 }
