@@ -462,7 +462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &366819999
 PrefabInstance:
@@ -996,7 +996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1833383265488970334, guid: 97f3675ce5172504c936e4629c503a08, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1833383265488970334, guid: 97f3675ce5172504c936e4629c503a08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3005,11 +3005,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 622381320699207979, guid: daf50a895dc96224c8d740d54197d566, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.92
+      value: 6.38
       objectReference: {fileID: 0}
     - target: {fileID: 622381320699207979, guid: daf50a895dc96224c8d740d54197d566, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.01
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 622381320699207979, guid: daf50a895dc96224c8d740d54197d566, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3654,6 +3654,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 805759612}
     m_Modifications:
+    - target: {fileID: 7187737132716864920, guid: 713c8d9e5394a1446ab1053c694e2c64, type: 3}
+      propertyPath: m_text
+      value: Hold press [E] to finish
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187737132716864920, guid: 713c8d9e5394a1446ab1053c694e2c64, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187737132716864920, guid: 713c8d9e5394a1446ab1053c694e2c64, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 7187737133345371194, guid: 713c8d9e5394a1446ab1053c694e2c64, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
