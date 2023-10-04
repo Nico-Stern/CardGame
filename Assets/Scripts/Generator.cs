@@ -9,6 +9,10 @@ public class Generator : MonoBehaviour
     [SerializeField]bool isFinished;
 
     public int ziel = 100;
+    [SerializeField] float OpenTimer;
+    [SerializeField] float Timer;
+    bool isCountdown=false;
+
     public float stand;
     public float ReperaturGeschwindigkeit=1;
 
@@ -17,8 +21,15 @@ public class Generator : MonoBehaviour
 
     private void Start()
     {
-        GenSlider=GameObject.FindGameObjectWithTag("Bar");
-        GenSlider.SetActive(false);
+        try
+        {
+            GenSlider = GameObject.FindGameObjectWithTag("Bar");
+            GenSlider.SetActive(false);
+        }
+        catch
+        {
+
+        }
     }
 
     void Update()
@@ -34,6 +45,21 @@ public class Generator : MonoBehaviour
             GenSlider.GetComponent<Slider>().maxValue = ziel;
             GenSlider.GetComponent<Slider>().value = stand;
             stand += ReperaturGeschwindigkeit * Time.deltaTime;
+        }
+
+        if (isCountdown)
+        {
+            Timer -= Time.deltaTime;
+            if (Timer <= 0)
+            {
+                isCountdown = false;
+                isFinished = false;
+                stand = 0;
+                for (int i = 0; i < Door.Length; i++)
+                {
+                    Door[i].ChangeDoor();
+                }
+            }
         }
     }
 
@@ -61,5 +87,7 @@ public class Generator : MonoBehaviour
         {
             Door[i].ChangeDoor();
         }
+        Timer = OpenTimer;
+        isCountdown = true;
     }
 }
