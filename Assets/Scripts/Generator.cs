@@ -8,6 +8,8 @@ public class Generator : MonoBehaviour
     [SerializeField] bool isTouching;
     [SerializeField]bool isFinished;
 
+    [SerializeField] bool IsTimer;
+
     public int ziel = 100;
     [SerializeField] float OpenTimer;
     [SerializeField] float Timer;
@@ -21,9 +23,10 @@ public class Generator : MonoBehaviour
 
     private void Start()
     {
+        GenSlider = GameObject.FindGameObjectWithTag("Bar");
+        print(1);
         try
         {
-            GenSlider = GameObject.FindGameObjectWithTag("Bar");
             GenSlider.SetActive(false);
         }
         catch
@@ -41,13 +44,12 @@ public class Generator : MonoBehaviour
         }
 
         if(isTouching&& Input.GetKey(KeyCode.E)&!isFinished)
-        {
-            GenSlider.GetComponent<Slider>().maxValue = ziel;
+        {       
             GenSlider.GetComponent<Slider>().value = stand;
             stand += ReperaturGeschwindigkeit * Time.deltaTime;
         }
 
-        if (isCountdown)
+        if (isCountdown&&IsTimer)
         {
             Timer -= Time.deltaTime;
             if (Timer <= 0)
@@ -67,7 +69,15 @@ public class Generator : MonoBehaviour
     {
         if (collision.gameObject.name=="Player"&!isFinished)
         {
-            GenSlider.SetActive(true);
+            try
+            {
+                GenSlider.GetComponent<Slider>().maxValue = this.ziel;
+                GenSlider.SetActive(true);
+            }
+            catch
+            {
+
+            }
             isTouching = true;
         }
     }
@@ -75,7 +85,14 @@ public class Generator : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
-            GenSlider.SetActive(false);
+            try
+            {
+                GenSlider.SetActive(false);
+            }
+            catch
+            {
+
+            }
             isTouching = false;
         }
     }
