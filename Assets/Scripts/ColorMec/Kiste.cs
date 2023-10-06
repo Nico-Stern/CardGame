@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.GameCenter;
@@ -8,6 +9,7 @@ using UnityEngine.UIElements;
 
 public class Kiste : ColorLibary
 {
+    public TMP_Text InteractText;
 
     private CharacterColor CC;
     private Rigidbody2D rb;
@@ -22,6 +24,7 @@ public class Kiste : ColorLibary
         base.Start();
         CC = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();
         Timer = StartTimer;
+        InteractText = GameObject.FindGameObjectWithTag("Text").GetComponent<TMP_Text>();
     }
 
     private void Update()
@@ -51,6 +54,10 @@ public class Kiste : ColorLibary
         {
             isTouching = true;
         }
+        if (CC.farbZahl == farbZahl)
+        {
+            InteractText.text = "[Spacebar]";
+        }
     }
 
     private void OnCollisionExit2D(Collision2D other)
@@ -58,6 +65,7 @@ public class Kiste : ColorLibary
         if (other.collider.CompareTag("Player"))
         {
             isTouching = false;
+            InteractText.text = "";
         }
     }
 }

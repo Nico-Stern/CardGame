@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTouching: 0
   isFinished: 0
+  IsTimer: 0
   ziel: 100
+  OpenTimer: 0
+  Timer: 0
   stand: 0
   ReperaturGeschwindigkeit: 5
   Door: []

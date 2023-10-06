@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ListSammler
   - Bar
+  - Text
   layers:
   - Default
   - TransparentFX

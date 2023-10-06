@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoEnd.unity
     guid: 1472d20ffaa293b45b763c7e9f3796b4
+  - enabled: 1
+    path: Assets/Scenes/SecondBlocking.unity
+    guid: 62a6fd2abee3cda4bad96e5ad52a0d9b
   m_configObjects: {}

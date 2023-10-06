@@ -9,7 +9,8 @@ public class ColorLibary : MonoBehaviour
     public int farbZahl;
 
     protected Color Lila = new Color(0.5f, 0, 1, 1);
-    protected Color Orange = new Color(1, 0.3f, 0, 1);
+    protected Color Orange = new Color(0.8f, 0.5f, 0, 1);
+    protected Color Schwarz = new Color(0.1f, 0.1f, 0.1f, 1);
     [SerializeField] private SpriteRenderer SR;
 
     enum Farben
@@ -52,7 +53,7 @@ public class ColorLibary : MonoBehaviour
                 SR.color  = Color.green;
                 break;
             case 7:
-                SR.color  = Color.black;
+                SR.color  = Schwarz;
                 break;
         }
     }
