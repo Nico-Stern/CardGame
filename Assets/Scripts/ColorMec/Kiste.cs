@@ -12,7 +12,6 @@ public class Kiste : ColorLibary
     public TMP_Text InteractText;
 
     private CharacterColor CC;
-    private Rigidbody2D rb;
 
     [SerializeField] private float Timer;
     [SerializeField] float StartTimer;
@@ -29,9 +28,9 @@ public class Kiste : ColorLibary
 
     private void Update()
     {
-        if (CC.farbZahl == farbZahl&&isTouching&&Input.GetKey(KeyCode.Space)&&Timer<=0)
+        if (CC.farbZahl == farbZahl && isTouching&&Input.GetKey(KeyCode.Space) && Timer<=0)
         {
-            gameObject.GetComponent<Collider2D>().isTrigger = true;
+            //gameObject.GetComponent<Collider2D>().isTrigger = true;
             this.transform.SetParent(GameObject.FindWithTag("Player").transform);
             transform.localPosition = new Vector2(0,0.18f);
             Timer = StartTimer;
@@ -39,9 +38,9 @@ public class Kiste : ColorLibary
         
         Timer -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space)&&Timer<=0||CC.farbZahl != farbZahl)
+        if (Input.GetKey(KeyCode.Space) && Timer<=0 || CC.farbZahl != farbZahl)
         {
-            gameObject.GetComponent<Collider2D>().isTrigger = false;
+            //gameObject.GetComponent<Collider2D>().isTrigger = false;
             isTouching = false;
             transform.SetParent(null);
             Timer = StartTimer;
@@ -57,6 +56,10 @@ public class Kiste : ColorLibary
         if (CC.farbZahl == farbZahl)
         {
             InteractText.text = "[Spacebar]";
+        }
+        else
+        {
+            InteractText.text = "Falsche Farbe!";
         }
     }
 

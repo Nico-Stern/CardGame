@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5440194033941584531}
   - component: {fileID: 5440194033941584557}
   - component: {fileID: 5440194033941584528}
-  - component: {fileID: -1362336860228515202}
   - component: {fileID: 5440194033941584529}
   m_Layer: 0
   m_Name: Kiste
@@ -49,6 +48,7 @@ MonoBehaviour:
   farbe: 6
   farbZahl: 6
   SR: {fileID: 5440194033941584529}
+  InteractText: {fileID: 0}
   Timer: 0
   StartTimer: 1
   isTouching: 0
@@ -78,19 +78,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
---- !u!114 &-1362336860228515202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5440194033941584534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a33279620bc17f9489f0cb5b3d18dc41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractText: {fileID: 0}
 --- !u!212 &5440194033941584529
 SpriteRenderer:
   m_ObjectHideFlags: 0

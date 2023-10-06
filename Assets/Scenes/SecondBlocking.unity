@@ -1434,7 +1434,7 @@ PrefabInstance:
       objectReference: {fileID: 2090314578}
     - target: {fileID: 4361250486982867566, guid: 647a8baf0499fb74eb8a3bf85ae948ec, type: 3}
       propertyPath: OpenTimer
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4361250486982867566, guid: 647a8baf0499fb74eb8a3bf85ae948ec, type: 3}
       propertyPath: Door.Array.size
