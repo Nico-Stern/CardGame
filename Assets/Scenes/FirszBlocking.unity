@@ -721,6 +721,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1224578725}
     m_Modifications:
+    - target: {fileID: 1736943379482909808, guid: 0d7ce61aeb025b64283f345fe5432565, type: 3}
+      propertyPath: isPowerdOnce
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3364733610016779248, guid: 0d7ce61aeb025b64283f345fe5432565, type: 3}
       propertyPath: m_Name
       value: EisenWand
@@ -3386,6 +3390,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5440194033941584529, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440194033941584529, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440194033941584529, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5440194033941584531, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3433,6 +3449,14 @@ PrefabInstance:
     - target: {fileID: 5440194033941584534, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
       propertyPath: m_Name
       value: Kiste
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440194033941584557, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
+      propertyPath: farbe
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5440194033941584557, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
+      propertyPath: farbZahl
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfa1cc6af974dba429a72991a6d90dff, type: 3}
