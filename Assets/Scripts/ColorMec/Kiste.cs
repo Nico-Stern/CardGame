@@ -11,12 +11,17 @@ public class Kiste : ColorLibary
 {
     public TMP_Text InteractText;
 
+    BoxCollider2D BC;
+
     private CharacterColor CC;
+
+    Vector2 OrgSize;
 
     [SerializeField] private float Timer;
     [SerializeField] float StartTimer;
 
     [SerializeField] private bool isTouching;
+    bool isCarring;
 
     public override void Start()
     {
@@ -24,26 +29,33 @@ public class Kiste : ColorLibary
         CC = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();
         Timer = StartTimer;
         InteractText = GameObject.FindGameObjectWithTag("Text").GetComponent<TMP_Text>();
+        BC = GetComponent<BoxCollider2D>();
+        OrgSize = BC.size;
     }
 
     private void Update()
     {
         if (CC.farbZahl == farbZahl && isTouching&&Input.GetKey(KeyCode.Space) && Timer<=0)
         {
-            //gameObject.GetComponent<Collider2D>().isTrigger = true;
+            BC.size = OrgSize / 10;
+            BC.offset = new Vector2(0,2);
             this.transform.SetParent(GameObject.FindWithTag("Player").transform);
             transform.localPosition = new Vector2(0,0.18f);
             Timer = StartTimer;
+            isCarring = true;
         }
         
         Timer -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space) && Timer<=0 || CC.farbZahl != farbZahl)
+        if (Input.GetKey(KeyCode.Space) && Timer<=0 &&isCarring|| CC.farbZahl != farbZahl)
         {
-            //gameObject.GetComponent<Collider2D>().isTrigger = false;
+            BC.size = OrgSize;
             isTouching = false;
             transform.SetParent(null);
             Timer = StartTimer;
+            BC.offset = Vector2.zero;
+            transform.position += new Vector3(0, 0.18f, 0);
+            isCarring = false;
         }
     }
 
