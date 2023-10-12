@@ -11,6 +11,8 @@ public class ColorLibary : MonoBehaviour
     protected Color Lila = new Color(0.5f, 0, 1, 1);
     protected Color Orange = new Color(0.8f, 0.4f, 0, 1);
     protected Color Schwarz = new Color(0.1f, 0.1f, 0.1f, 1);
+    protected Color Brown = new Color(0.3f, 0.2f, 0.1f, 1);
+
     [SerializeField] private SpriteRenderer SR;
 
     enum Farben
@@ -22,7 +24,8 @@ public class ColorLibary : MonoBehaviour
         Gelb,
         Orange,
         Grün,
-        Schwarz
+        Schwarz,
+        NichtDurchLassig
     }
 
     public virtual void Start()
@@ -54,6 +57,9 @@ public class ColorLibary : MonoBehaviour
                 break;
             case 7:
                 SR.color  = Schwarz;
+                break;
+            case 8:
+                SR.color = Brown;
                 break;
         }
     }
