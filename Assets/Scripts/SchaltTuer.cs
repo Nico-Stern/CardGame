@@ -53,7 +53,7 @@ public class SchaltTuer : MonoBehaviour
 
     private void Update()
     {
-        if(SP.isVisible)
+        if(Cam.isOnPosition)//cam auf objekt
         {
             StartCoroutine(NewCamera());
         }
@@ -72,8 +72,10 @@ public class SchaltTuer : MonoBehaviour
     }
 
     IEnumerator NewCamera()
-    {
-        yield return new WaitForSeconds(.5f);
+    {   
         DoorAusAn();
+        yield return new WaitForSeconds(.5f);
+
+        Cam.isOnPosition = false;
     }
 }

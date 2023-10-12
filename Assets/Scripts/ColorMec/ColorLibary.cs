@@ -32,42 +32,18 @@ public class ColorLibary : MonoBehaviour
     {
         farbZahl= ((int)farbe);
 
-        switch (farbZahl)
-        {
-            case 0:
-             SR.color = Color.white;
-                break;
-            case 1:
-                SR.color = Color.red;
-                break;
-            case 2:
-                SR.color  = Color.blue;
-                break;
-            case 3:
-                SR.color  =Lila ;
-                break;
-            case 4:
-                SR.color  = Color.yellow;
-                break;
-            case 5:
-                SR.color  = Orange;
-                break;
-            case 6:
-                SR.color  = Color.green;
-                break;
-            case 7:
-                SR.color  = Schwarz;
-                break;
-            case 8:
-                SR.color = Brown;
-                break;
-        }
+        SwitchColr();
     }
 
     private void OnValidate()
     {
         farbZahl= ((int)farbe);
 
+        SwitchColr();
+    }
+
+    void SwitchColr()
+    {
         switch (farbZahl)
         {
             case 0:
@@ -77,23 +53,26 @@ public class ColorLibary : MonoBehaviour
                 SR.color = Color.red;
                 break;
             case 2:
-                SR.color  = Color.blue;
+                SR.color = Color.blue;
                 break;
             case 3:
-                SR.color  =Lila ;
+                SR.color = Lila;
                 break;
             case 4:
-                SR.color  = Color.yellow;
+                SR.color = Color.yellow;
                 break;
             case 5:
-                SR.color  = Orange;
+                SR.color = Orange;
                 break;
             case 6:
-                SR.color  = Color.green;
+                SR.color = Color.green;
                 break;
             case 7:
-                SR.color  = Color.black;
+                SR.color = Schwarz;
                 break;
-         }
+            case 8:
+                SR.color = Brown;
+                break;
+        }
     }
 }
