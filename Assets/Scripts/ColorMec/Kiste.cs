@@ -47,14 +47,18 @@ public class Kiste : ColorLibary
         
         Timer -= Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Space) && Timer<=0 &&isCarring|| CC.farbZahl != farbZahl)
+
+        
+        //2Collider ein triger eine box
+        if (Input.GetKey(KeyCode.Space) && Timer<=0 &&isCarring|| CC.farbZahl != farbZahl && isCarring)
         {
             BC.size = OrgSize;
             isTouching = false;
+            transform.localPosition= new Vector2(0,0.18f);
             transform.SetParent(null);
             Timer = StartTimer;
             BC.offset = Vector2.zero;
-            transform.position += new Vector3(0, 0.18f, 0);
+            
             isCarring = false;
         }
     }
