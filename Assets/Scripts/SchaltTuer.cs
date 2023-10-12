@@ -74,7 +74,7 @@ public class SchaltTuer : MonoBehaviour
     IEnumerator NewCamera()
     {   
         DoorAusAn();
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.2f);
 
         Cam.isOnPosition = false;
     }
