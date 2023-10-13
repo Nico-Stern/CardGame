@@ -18,6 +18,8 @@ public class SchaltTuer : MonoBehaviour
     [SerializeField]float TimerofPower=7;
     [SerializeField]float Timer;
 
+    public float Multi=0.2f;
+
     private void Start()
     {
         C2=GetComponent<BoxCollider2D>();
@@ -25,15 +27,39 @@ public class SchaltTuer : MonoBehaviour
         Cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
-    public void ChangeDoor()
+    private void Update()
     {
+        if(Cam.isOnPosition)//cam auf objekt
+        {
+            StartCoroutine(NewCamera());
+        }
+        if (isPowerdOnce)
+        {
+
+            Timer -= Time.deltaTime;
+
+            if (Timer < 0)
+            {
+                isPowerdOnce = false;
+                Timer = 0;
+            }
+        }
+    }
+
+    public void ChangeDoor(int index)
+    {
+        Multi += index;
+        isPowerd = true;
+        Timer = TimerofPower;
+        //In Cam Liste Rein für die Camerafahrt
         if (!isPowerdOnce&&C2.enabled)
         {
             Cam.CamPositions.Add(this.gameObject);
+            isPowerdOnce = true;
+            return;
         }
-        isPowerdOnce=true;
-        isPowerd = true;
-        Timer = TimerofPower;
+        isPowerdOnce = true;
+        DoorAusAn();
     }
 
     void DoorAusAn()
@@ -51,31 +77,12 @@ public class SchaltTuer : MonoBehaviour
         isPowerd=false;
     }
 
-    private void Update()
-    {
-        if(Cam.isOnPosition)//cam auf objekt
-        {
-            StartCoroutine(NewCamera());
-        }
-        if (isPowerdOnce)
-        {
-            
-            Timer -= Time.deltaTime;
-            
-            if (Timer <0)
-            {
-                isPowerdOnce = false;
-                Timer = 0;
-            }
-        }
-
-    }
 
     IEnumerator NewCamera()
-    {   
+    {           
+        yield return new WaitForSeconds(Multi);
         DoorAusAn();
         yield return new WaitForSeconds(.2f);
-
         Cam.isOnPosition = false;
     }
 }

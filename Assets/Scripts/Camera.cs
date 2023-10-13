@@ -46,8 +46,6 @@ public class Camera : MonoBehaviour
                 {
                     LastVector= CamPositions[0].transform.position;
                     CamPositions.RemoveAt(0);
-
-
                     isOnPosition = true;
                 }
             }

@@ -59,7 +59,7 @@ public class Generator : MonoBehaviour
                 stand = 0;
                 for (int i = 0; i < Door.Length; i++)
                 {
-                    Door[i].ChangeDoor();
+                    Door[i].ChangeDoor(i);
                 }
             }
         }
@@ -102,7 +102,7 @@ public class Generator : MonoBehaviour
         GenSlider.SetActive(false);
         for(int i = 0; i < Door.Length; i++)
         {
-            Door[i].ChangeDoor();
+            Door[i].ChangeDoor(i);
         }
         Timer = OpenTimer;
         isCountdown = true;
