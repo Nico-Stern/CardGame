@@ -22,6 +22,7 @@ public class Kiste : ColorLibary
 
     [SerializeField] private bool isTouching;
     bool isCarring;
+    [SerializeField] bool isOverlap;
 
     public override void Start()
     {
@@ -47,9 +48,13 @@ public class Kiste : ColorLibary
         
         Timer -= Time.deltaTime;
 
+        if (isOverlap)
+        {
+            transform.position -= new Vector3(0, Time.deltaTime, 0);
+        }
 
         
-        //2Collider ein triger eine box
+        //2Collider ein trigger eine box
         if (Input.GetKey(KeyCode.Space) && Timer<=0 &&isCarring|| CC.farbZahl != farbZahl && isCarring)
         {
             BC.size = OrgSize;
@@ -88,5 +93,22 @@ public class Kiste : ColorLibary
         }
     }
 
-   
+    
+
+   /* private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            isOverlap = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(BoxCollider2D collision)
+    {
+        //if (transform.parent == null)
+        {
+            isOverlap = true;
+        }
+    }
+   */
 }
