@@ -17,12 +17,16 @@ public class Camera : MonoBehaviour
 
     private void Update()
     {
+
+        //Wenn keine punkte in liste sind und Die position nicht darauf ist
         if (CamPositions.Count==0&!isOnPosition)
         {
+            //Cam zum spieler
             unterschied = Player.transform.position - transform.position;
         }
         else
         {
+            //Ansonsten kann sich der spieler nicht bewegen
             Player.canMove = false;
 
             try 
@@ -33,8 +37,6 @@ public class Camera : MonoBehaviour
             {
                 unterschied = LastVector - transform.position;
             }
-               
-
             try
             {
                 
@@ -44,16 +46,28 @@ public class Camera : MonoBehaviour
                 (transform.position.y + sense >= CamPositions[0].transform.position.y &&
                  transform.position.y - sense <= CamPositions[0].transform.position.y)))
                 {
-                    LastVector= CamPositions[0].transform.position;
-                    CamPositions.RemoveAt(0);
-                    isOnPosition = true;
+                    if(!isOnPosition)
+                    {
+                        isOnPosition = true;
+                        OnPosition();
+                    }
                 }
             }
-            catch {  }
+            catch 
+            { 
+
+            }
         }
 
         unterschied.Normalize();
         unterschied.z = 0;
         transform.position += unterschied*Time.deltaTime*Speed;
+    }
+
+    void OnPosition()
+    {
+        LastVector = CamPositions[0].transform.position;
+        CamPositions.RemoveAt(0);
+        isOnPosition= false;     
     }
 }

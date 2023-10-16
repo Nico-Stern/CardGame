@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,10 +22,12 @@ public class Generator : MonoBehaviour
     public SchaltTuer[] Door;
     public GameObject GenSlider;
 
+    OpenDoorManager OpenDoorManager;
+
     private void Start()
     {
+        OpenDoorManager = OpenDoorManager.FindObjectOfType<OpenDoorManager>();
         GenSlider = GameObject.FindGameObjectWithTag("Bar");
-        print(1);
         try
         {
             GenSlider.SetActive(false);

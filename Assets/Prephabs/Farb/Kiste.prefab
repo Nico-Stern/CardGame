@@ -53,6 +53,7 @@ MonoBehaviour:
   Timer: 0
   StartTimer: 1
   isTouching: 0
+  isOverlap: 0
 --- !u!61 &5440194033941584528
 BoxCollider2D:
   m_ObjectHideFlags: 0

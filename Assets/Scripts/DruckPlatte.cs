@@ -5,6 +5,7 @@ using UnityEngine;
 public class DruckPlatte : MonoBehaviour
 {
     public SchaltTuer[] Door;
+    Camera Cam;
 
     [SerializeField] private float radius;
     [SerializeField] private bool isPressed;
@@ -15,6 +16,7 @@ public class DruckPlatte : MonoBehaviour
 
     private void Start()
     {
+        Cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         isClosed = true;
     }
 
@@ -42,11 +44,23 @@ public class DruckPlatte : MonoBehaviour
 
         AnzahlCol = collisions.Length;
 
-        if (collisions.Length > 1) isPressed = true;
-        else
+        //1 weil eigenes objekt
+        if (collisions.Length > 1) 
+        {
+            if(collisions.Length==2|| collisions[1].gameObject == Cam)
+            {
+                print("cam");
+                return;
+            }
+            isPressed = true;
+            print("druck auf");
+        } 
+
+        else if(collisions.Length <= 1)
         {
             alreadyPressed = false;
             isPressed = false;
+            print("druck zu");
         }
     }
 

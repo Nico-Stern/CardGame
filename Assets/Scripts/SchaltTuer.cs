@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
@@ -18,21 +19,18 @@ public class SchaltTuer : MonoBehaviour
     [SerializeField]float TimerofPower=7;
     [SerializeField]float Timer;
 
-    public float Multi=0.2f;
+    float Multi=.1f;
 
     private void Start()
     {
         C2=GetComponent<BoxCollider2D>();
         SP=GetComponent<SpriteRenderer>();
         Cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-    }
+        
+}
 
     private void Update()
     {
-        if(Cam.isOnPosition)//cam auf objekt
-        {
-            StartCoroutine(NewCamera());
-        }
         if (isPowerdOnce)
         {
 
@@ -46,9 +44,10 @@ public class SchaltTuer : MonoBehaviour
         }
     }
 
+
     public void ChangeDoor(int index)
     {
-        Multi += index;
+        print(Multi);
         isPowerd = true;
         Timer = TimerofPower;
         //In Cam Liste Rein für die Camerafahrt
@@ -56,6 +55,7 @@ public class SchaltTuer : MonoBehaviour
         {
             Cam.CamPositions.Add(this.gameObject);
             isPowerdOnce = true;
+            //StartCoroutine(NewCamera());
             return;
         }
         isPowerdOnce = true;
@@ -74,7 +74,7 @@ public class SchaltTuer : MonoBehaviour
             C2.enabled = true;
             SP.color += new Color(0, 0, 0, 1);
         }
-        isPowerd=false;
+        isPowerd=false; 
     }
 
 
@@ -82,7 +82,20 @@ public class SchaltTuer : MonoBehaviour
     {           
         yield return new WaitForSeconds(Multi);
         DoorAusAn();
-        yield return new WaitForSeconds(.2f);
+        StartCoroutine(NewPosition());
+    }
+
+    IEnumerator NewPosition()
+    {
+        yield return new WaitForSeconds(.5f);
         Cam.isOnPosition = false;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("MainCamera"))
+        {
+            StartCoroutine(NewCamera());
+        }
     }
 }
