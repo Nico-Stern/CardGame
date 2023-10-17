@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
     public CharacterMovement Player;
+    private BoxCollider2D BC;
 
     [SerializeField] Vector3 unterschied;
     Vector3 LastVector;
@@ -14,15 +16,17 @@ public class Camera : MonoBehaviour
 
     public List<GameObject> CamPositions ;
     public bool isOnPosition;
+    
 
     private void Update()
     {
-
+        
         //Wenn keine punkte in liste sind und Die position nicht darauf ist
         if (CamPositions.Count==0&!isOnPosition)
         {
             //Cam zum spieler
             unterschied = Player.transform.position - transform.position;
+            
         }
         else
         {
@@ -68,6 +72,7 @@ public class Camera : MonoBehaviour
     {
         LastVector = CamPositions[0].transform.position;
         CamPositions.RemoveAt(0);
-        isOnPosition= false;     
+        isOnPosition= false;
     }
+
 }

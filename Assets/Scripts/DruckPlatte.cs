@@ -47,7 +47,7 @@ public class DruckPlatte : MonoBehaviour
         //1 weil eigenes objekt
         if (collisions.Length > 1) 
         {
-            if(collisions.Length==2|| collisions[1].gameObject == Cam)
+            if(collisions.Length==2&&(collisions[0].gameObject.CompareTag("MainCamera")||collisions[1].gameObject.CompareTag("MainCamera")))
             {
                 print("cam");
                 return;
