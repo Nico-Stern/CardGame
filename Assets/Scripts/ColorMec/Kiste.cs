@@ -41,7 +41,7 @@ public class Kiste : ColorLibary
             BC.size = OrgSize / 10;
             BC.offset = new Vector2(0,2);
             this.transform.SetParent(GameObject.FindWithTag("Player").transform);
-            transform.localPosition = new Vector2(0,0.18f);
+            transform.localPosition = new Vector2(0, -0.25f);
             Timer = StartTimer;
             isCarring = true;
         }
@@ -59,7 +59,7 @@ public class Kiste : ColorLibary
         {
             BC.size = OrgSize;
             isTouching = false;
-            transform.localPosition= new Vector2(0,0.18f);
+            transform.localPosition= new Vector2(0,-0.25f);
             transform.SetParent(null);
             Timer = StartTimer;
             BC.offset = Vector2.zero;

@@ -4254,21 +4254,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2270609407485649443, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2270609407485649444, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2270609407485649444, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.13
+      value: -12.37
       objectReference: {fileID: 0}
     - target: {fileID: 2270609407485649444, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.83
+      value: -2.27
       objectReference: {fileID: 0}
     - target: {fileID: 2270609407485649444, guid: 18d2cf61cf5d51747a3046d949dc2d9b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7774,10 +7770,6 @@ PrefabInstance:
     - target: {fileID: 5549699851739940745, guid: daf50a895dc96224c8d740d54197d566, type: 3}
       propertyPath: m_Name
       value: Druckplatte
-      objectReference: {fileID: 0}
-    - target: {fileID: 8624411698306283930, guid: daf50a895dc96224c8d740d54197d566, type: 3}
-      propertyPath: radius
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8624411698306283930, guid: daf50a895dc96224c8d740d54197d566, type: 3}
       propertyPath: Door.Array.data[0]
