@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterColor : ColorLibary
 {
 
+    public GameObject Kiste;
+
     public void ChangeColor(int Eimerzahl)
     {
         farbZahl += Eimerzahl;

@@ -42,7 +42,7 @@ public class ColorLibary : MonoBehaviour
         SwitchColr();
     }
 
-    void SwitchColr()
+     public void SwitchColr()
     {
         switch (farbZahl)
         {

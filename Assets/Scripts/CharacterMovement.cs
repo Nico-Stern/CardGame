@@ -10,6 +10,8 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer SP;
 
+    
+
     [SerializeField] float timeMovementBlocked;
 
     public bool canMove;

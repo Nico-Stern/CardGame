@@ -24,6 +24,8 @@ public class Kiste : ColorLibary
     bool isCarring;
     [SerializeField] bool isOverlap;
 
+    bool ispressed;
+
     public override void Start()
     {
         base.Start();
@@ -36,14 +38,24 @@ public class Kiste : ColorLibary
 
     private void Update()
     {
-        if (CC.farbZahl == farbZahl && isTouching&&Input.GetKey(KeyCode.Space) && Timer<=0)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            BC.size = OrgSize / 10;
-            BC.offset = new Vector2(0,2);
-            this.transform.SetParent(GameObject.FindWithTag("Player").transform);
-            transform.localPosition = new Vector2(0, -0.25f);
-            Timer = StartTimer;
-            isCarring = true;
+            ispressed = true;
+        }
+
+        if (CC.farbZahl == farbZahl && isTouching&&ispressed && Timer<=0)
+        {
+            if (CC.Kiste==null)
+            {
+                ispressed = false;
+                CC.Kiste = this.gameObject;
+                BC.size = OrgSize / 10;
+                BC.offset = new Vector2(0, 2);
+                this.transform.SetParent(GameObject.FindWithTag("Player").transform);
+                transform.localPosition = new Vector2(0, -0.25f);
+                Timer = StartTimer;
+                isCarring = true;
+            }
         }
         
         Timer -= Time.deltaTime;
@@ -55,16 +67,24 @@ public class Kiste : ColorLibary
 
         
         //2Collider ein trigger eine box
-        if (Input.GetKey(KeyCode.Space) && Timer<=0 &&isCarring|| CC.farbZahl != farbZahl && isCarring)
+        if (ispressed && Timer<=0 &&isCarring)
         {
+            ispressed = false;
             BC.size = OrgSize;
             isTouching = false;
             transform.localPosition= new Vector2(0,-0.25f);
             transform.SetParent(null);
             Timer = StartTimer;
             BC.offset = Vector2.zero;
+            CC.Kiste = null;
             
             isCarring = false;
+        }
+
+        if (isCarring)
+        {
+            farbZahl = CC.farbZahl;
+            SwitchColr();
         }
     }
 
