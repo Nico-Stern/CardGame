@@ -32,18 +32,15 @@ public class Kiste : ColorLibary
         CC = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();
         Timer = StartTimer;
         InteractText = GameObject.FindGameObjectWithTag("Text").GetComponent<TMP_Text>();
+        InteractText.text = "";
         BC = GetComponent<BoxCollider2D>();
         OrgSize = BC.size;
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ispressed = true;
-        }
 
-        if (CC.farbZahl == farbZahl && isTouching&&ispressed && Timer<=0)
+        if (CC.farbZahl == farbZahl && isTouching&& (Input.GetKeyDown(KeyCode.Space)) && Timer<=0)
         {
             if (CC.Kiste==null)
             {
@@ -67,7 +64,7 @@ public class Kiste : ColorLibary
 
         
         //2Collider ein trigger eine box
-        if (ispressed && Timer<=0 &&isCarring)
+        if ((Input.GetKeyDown(KeyCode.Space)) && Timer<=0 &&isCarring)
         {
             ispressed = false;
             BC.size = OrgSize;
@@ -94,11 +91,11 @@ public class Kiste : ColorLibary
         {
             isTouching = true;
         }
-        if (CC.farbZahl == farbZahl)
+        if (CC.farbZahl == farbZahl&& col.CompareTag("Player"))
         {
             InteractText.text = "[Spacebar]";
         }
-        else
+        else if(col.CompareTag("Player"))
         {
             InteractText.text = "Falsche Farbe!";
         }
