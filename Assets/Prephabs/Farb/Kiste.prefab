@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farbe: 6
-  farbZahl: 6
   SR: {fileID: 5440194033941584529}
   InteractText: {fileID: 0}
   Timer: 0

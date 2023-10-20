@@ -47,7 +47,6 @@ public class SchaltTuer : MonoBehaviour
 
     public void ChangeDoor(int index)
     {
-        print(Multi);
         isPowerd = true;
         Timer = TimerofPower;
         //In Cam Liste Rein für die Camerafahrt

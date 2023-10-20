@@ -53,14 +53,12 @@ public class DruckPlatte : MonoBehaviour
                 return;
             }
             isPressed = true;
-            print("druck auf");
         } 
 
         else if(collisions.Length <= 1)
         {
             alreadyPressed = false;
             isPressed = false;
-            print("druck zu");
         }
     }
 

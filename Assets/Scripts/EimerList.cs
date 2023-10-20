@@ -12,15 +12,15 @@ public class EimerList : MonoBehaviour
     {
         for (int i = 0; i < YellowEimer.Count; i++)
         {
-            YellowEimer[i].SetActive(true);
+            YellowEimer[i].GetComponent<BoxCollider2D>().enabled = true;
         }
         for (int i = 0; i < BlueEimer.Count; i++)
-        { 
-            BlueEimer[i].SetActive(true);
+        {
+            BlueEimer[i].GetComponent<BoxCollider2D>().enabled = true;
         }
         for (int i = 0; i < RedEimer.Count; i++)
         {
-            RedEimer[i].SetActive(true);
+            RedEimer[i].GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 }

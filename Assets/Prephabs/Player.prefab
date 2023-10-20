@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   farbe: 0
-  farbZahl: 0
   SR: {fileID: 2270609407485649447}
   Kiste: {fileID: 0}
 --- !u!114 &2270609407485649442

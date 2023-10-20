@@ -6,7 +6,7 @@ using UnityEngine;
 public class ColorLibary : MonoBehaviour
 {
     [SerializeField] Farben farbe;
-    public int farbZahl;
+    [NonSerialized]public int farbZahl;
 
     protected Color Lila = new Color(0.7f, 0, 1, 1);
     protected Color Orange = new Color(01f, 0.2f, 0, 1);

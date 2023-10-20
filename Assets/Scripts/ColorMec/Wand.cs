@@ -12,7 +12,11 @@ public class Wand : ColorLibary
     public override void Start()
     {
         base.Start();
-        CC=GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();
+        CC=GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterColor>();  
+    }
+
+    private void OnValidate()
+    {
         SP = GetComponent<SpriteRenderer>();
         C2.GetComponent<BoxCollider2D>();
         C2.size = SP.size;
