@@ -9,6 +9,8 @@ public class KI : MonoBehaviour
     bool isinRange;
     Rigidbody2D rb;
 
+    RaycastHit2D hit;
+
     [SerializeField] float LineLength = 1;
 
     public int geschwindigkeit = 5;
@@ -27,8 +29,12 @@ public class KI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Physics2D.Raycast(transform.position ,Player.transform.position);
-        Debug.DrawLine(transform.position, Player.transform.position);
+        if (isinRange)
+        {
+            hit= Physics2D.Raycast(transform.position, Player.transform.position);
+            Debug.DrawLine(transform.position, Player.transform.position, Color.green);
+            print(hit);
+        }
 
         Debug.DrawLine(transform.position, transform.position + new Vector3(LineLength,0,0));
         Debug.DrawLine(transform.position, transform.position + new Vector3(-LineLength, 0, 0));
