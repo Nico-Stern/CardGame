@@ -27,10 +27,10 @@ public class CharacterColor : ColorLibary
                 GetComponent<SpriteRenderer>().color = Color.white;
                 break;
             case 1:
-                GetComponent<SpriteRenderer>().color = Color.red;
+                GetComponent<SpriteRenderer>().color = NewRed;
                 break;
             case 2:
-                GetComponent<SpriteRenderer>().color = Color.blue;
+                GetComponent<SpriteRenderer>().color = NewBlue;
                 break;
             case 3:
                 GetComponent<SpriteRenderer>().color = Lila;

@@ -45,7 +45,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.5161979, g: 0.7354808, b: 0.754717, a: 0}
+  m_BackGroundColor: {r: 0.3882353, g: 0.49183792, b: 0.5647059, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 0}
   unterschied: {x: 0, y: 0, z: 0}
-  Speed: 40
+  Speed: 55
   sense: 0.1
   CamPositions: []
   isOnPosition: 0

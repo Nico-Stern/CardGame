@@ -13,6 +13,7 @@ public class ColorLibary : MonoBehaviour
     protected Color Schwarz = new Color(0.1f, 0.1f, 0.1f, 1);
     protected Color Brown = new Color(0.3f, 0.2f, 0.1f, 1);
     protected Color NewRed = new Color(0.5f, 0, 0, 1);
+    protected Color NewBlue = new Color(0, 0, 0.85f, 1);
 
     [SerializeField] private SpriteRenderer SR;
 
@@ -54,7 +55,7 @@ public class ColorLibary : MonoBehaviour
                 SR.color = NewRed;
                 break;
             case 2:
-                SR.color = Color.blue;
+                SR.color = NewBlue;
                 break;
             case 3:
                 SR.color = Lila;

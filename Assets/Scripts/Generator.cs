@@ -75,6 +75,7 @@ public class Generator : MonoBehaviour
             try
             {
                 GenSlider.GetComponent<Slider>().maxValue = this.ziel;
+                GenSlider.GetComponent<Slider>().value = stand;
                 GenSlider.SetActive(true);
             }
             catch
